@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Tournament</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="tournament-name">Nome Torneo</h1>
+        <button id="back-to-home">
+            <span>&#8592;</span> Torna alla Home
+        </button>
+
+        <div id="tournament-controls">
+             <input type="file" id="background-upload" accept="image/*">
+             <label for="background-upload" id="upload-label">
+                 <span>&#128228;</span> Carica Sfondo
+            </label>
+        </div>
+
+        <div id="timer-container">
+            <div id="timer">
+                <h2 class="timer-label">Timer</h2>
+                <p id="level-timer">00:00</p>
+                <div class="timer-controls">
+                      <button id="prev-level-btn"><span>&#9194;</span></button>
+                      <button id="pause-resume-btn"><span>&#9208;</span></button>
+                      <button id="next-level-btn"><span>&#9193;</span></button>
+                 </div>
+            </div>
+
+            <div id="current-level">
+                <h2>Livello Attuale</h2>
+                 <p>Small Blind: <span id="current-small-blind"></span></p>
+                 <p>Big Blind: <span id="current-big-blind"></span></p>
+                 <p>Ante: <span id="current-ante"></span></p>
+                 <p>Durata: <span id="current-duration"></span> min</p>
+            </div>
+            <div id="next-level">
+                <h2>Prossimo Livello</h2>
+                <p>Small Blind: <span id="next-small-blind"></span></p>
+                <p>Big Blind: <span id="next-big-blind"></span></p>
+                <p>Ante: <span id="next-ante"></span></p>
+             </div>
+              <p id="break-timer">Prossima pausa tra: <span id="next-break"></span></p>
+        </div>
+        <div id="payout-config" class="hidden">
+            <h2>Configura Payout</h2>
+             <p id="payout-config-message" class="error-message"></p>
+            <label for="first-place-percent">1° Posto (%):</label>
+            <input type="number" id="first-place-percent" min="0" max="100" value="50">
+
+            <label for="second-place-percent">2° Posto (%):</label>
+            <input type="number" id="second-place-percent" min="0" max="100" value="25">
+
+            <label for="third-place-percent">3° Posto (%):</label>
+            <input type="number" id="third-place-percent" min="0" max="100" value="15">
+
+            <label for="fourth-place-percent">4° Posto (%):</label>
+            <input type="number" id="fourth-place-percent" min="0" max="100" value="10">
+
+            <button id="save-payout-btn">Salva Payout</button>
+        </div>
+
+        <div id="info-container">
+            <div id="left-info">
+                <div id="payout">
+                    <h2>Payout</h2>
+                    <p>1° posto: <span id="first-prize"></span> €</p>
+                    <p>2° posto: <span id="second-prize"></span> €</p>
+                    <p>3° posto: <span id="third-prize"></span> €</p>
+                    <p>4° posto: <span id="fourth-prize"></span> €</p>
+                </div>
+
+                <div id="prize-pool">
+                    <h2>Prize Pool</h2>
+                    <p><span id="total-prize-pool"></span> €</p>
+                </div>
+            </div>
+
+            <div id="right-info">
+                <div id="players-remaining">
+                   <p>Giocatori rimasti: <span id="remaining-count"></span>/<span id="total-players"></span></p>
+                   <p>Average Stack: <span id="average-stack"></span></p>
+                </div>
+             </div>
+        </div>
+
+      <button id="player-out">
+        <span class="icon-skull">&#x1F480;</span>
+      </button>
+    </div>
+
+    <audio id="level-change-sound" src="assets/sounds/level-change-sound.mp3" preload="auto"></audio>
+    <audio id="pause-alert-sound" src="assets/sounds/pause-alert-sound.mp3" preload="auto"></audio>
+    <audio id="player-out-sound" src="assets/sounds/player-out-sound.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

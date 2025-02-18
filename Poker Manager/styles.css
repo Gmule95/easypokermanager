@@ -1,0 +1,390 @@
+/* Stili generali */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: scroll; /* Aggiunto per permettere lo scrolling se necessario */
+
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 90%;  /* Limita la larghezza massima */
+    margin: 0 auto; /* Centra orizzontalmente */
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: #ff4444;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Transizione hover */
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+/* Stili per i form */
+form {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    /* display: inline-block; */ /* Rimosso per permettere al form di occupare l'intera larghezza */
+    text-align: left;
+    width: 100%; /* Occupa l'intera larghezza disponibile */
+    box-sizing: border-box; /* Include padding e border nella larghezza */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+input[type="text"],
+input[type="number"],
+select {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Stili per le tabelle */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Stili specifici per la tabella dei livelli */
+#levels-table input[type="number"] {
+    width: 80px; /* Larghezza specifica per gli input numerici */
+    padding: 5px;
+}
+
+/* Stili specifici per la tabella dei giocatori */
+/* (Nessuno stile specifico aggiunto qui, usa gli stili generali per le tabelle) */
+
+/* ------ Stili per la pagina Live Tournament ------ */
+#tournament-controls {
+    margin-bottom: 20px;
+}
+
+#background-upload {
+    display: none; /* Nascondi l'input file */
+}
+
+#upload-label {
+    display: inline-block;
+    background-color: #ff4444;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease; /* Transizione hover */
+}
+
+#upload-label:hover {
+    background-color: #cc0000;
+}
+
+#upload-label span {
+    margin-right: 5px;
+}
+
+#timer-container {
+  width:100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#timer{
+  order: -1; /* Mette il timer sopra */
+}
+
+#current-level, #next-level{
+  width:50%;
+  margin: 2rem;
+}
+
+/* Stili per i controlli del timer */
+#timer .timer-controls {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;     /* Centra verticalmente */
+}
+#timer .timer-controls button {
+  margin: 1rem;
+}
+
+#level-timer {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ff4444;
+    margin-bottom: 0.5rem;
+}
+
+/* Sezioni di informazioni */
+#info-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    gap: 2rem; /* Spazio tra le colonne */
+}
+
+#left-info, #right-info {
+    flex: 1;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+}
+ #payout, #prize-pool{
+    margin-bottom: 15px;
+}
+
+#payout,
+#players-remaining {
+  font-size: 1.2rem;
+}
+#prize-pool{
+  font-size: 1.1rem
+}
+
+/* Pulsante Player Out */
+#player-out {
+    background-color: #ff4444;
+    color: #fff;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0;
+    transition: background-color 0.3s ease; /* Transizione hover */
+}
+
+#player-out:hover {
+    background-color: #cc0000;
+}
+
+#player-out .icon-skull {
+    margin: 0; /* Rimuovi margini per centrare l'icona */
+}
+
+/* Pulsanti di controllo del timer */
+.timer-controls button {
+    background-color: transparent;
+    color: #ff4444;
+    border: 2px solid #ff4444;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transizione hover */
+}
+
+.timer-controls button:hover {
+    background-color: #ff4444;
+    color: #fff;
+}
+
+.timer-controls span {
+    margin: 0;
+}
+
+/* Pulsante Torna alla Home */
+#back-to-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease; /* Transizione hover */
+}
+
+#back-to-home span {
+    margin-right: 5px; /* Spazio tra icona e testo */
+}
+#back-to-home:hover{
+   background-color: #cc0000;
+}
+
+/* Modale (popup) */
+.modal {
+    display: none; /* Nascosto di default */
+    position: fixed;
+    z-index: 1000; /* Sopra tutto il resto */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo semi-trasparente */
+    overflow-y: auto; /* Abilita lo scrolling se il contenuto è troppo alto */
+
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    margin: 10% auto; /* Centrato con margine superiore */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Larghezza massima */
+    width: 90%; /* Larghezza */
+    position: relative; /* Per posizionare il pulsante di chiusura */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Stili per gli errori di validazione */
+.error-message {
+    color: #ff4444;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+.input-error {
+  border: 1px solid #ff4444;
+}
+
+/* Transizioni */
+#tournament-form, #player-form, .modal {
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transizione fluida */
+}
+
+#tournament-form.hidden, #player-form.hidden, .modal.hidden {
+  opacity: 0;  /* Completamente trasparente */
+  transform: translateY(-20px);  /* Leggermente spostato verso l'alto */
+  pointer-events: none; /* Disabilita interazioni quando è nascosto */
+}
+
+/* Aggiungi queste regole per mostrare la modale */
+.modal {
+    display: none; /* Nascosto di default */
+}
+
+.modal.open {
+    display: block; /* Visibile quando ha la classe 'open' */
+}
+
+/* Media Queries per la Responsività */
+/* Tablet (in orizzontale) e schermi più piccoli */
+@media (max-width: 768px) {
+    #info-container {
+        flex-direction: column; /* Metti le sezioni una sopra l'altra */
+    }
+
+    #left-info, #right-info {
+        width: 100%; /* Occupa l'intera larghezza */
+    }
+    #timer-container{
+      flex-direction: column;
+    }
+     #timer .timer-controls {
+      flex-wrap: wrap;
+
+    }
+     #timer .timer-controls button {
+      margin: 0.3rem;
+    }
+    #current-level, #next-level{
+      width: 80%;
+    }
+}
+
+/* Smartphone (in verticale) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Riduci il padding */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Riduci la dimensione del titolo */
+    }
+
+    button {
+        padding: 8px 16px; /* Riduci il padding dei pulsanti */
+        font-size: 14px;
+    }
+
+    #level-timer {
+        font-size: 3rem; /* Riduci la dimensione del timer */
+    }
+
+    #payout p,
+    #players-remaining p {
+        font-size: 1rem; /* Riduci la dimensione del testo */
+    }
+    #current-level, #next-level{
+      width: 90%;
+    }
+    .timer-controls button{
+      font-size: 0.8rem;
+    }
+
+    #player-out{
+      width: 50px;
+      height: 50px;
+    }
+}

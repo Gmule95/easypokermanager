@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Poker Manager</h1>
+        <button id="create-tournament">Crea Torneo</button>
+
+        <div id="tournament-form" class="hidden">
+            <h2>Configura Nuovo Torneo</h2>
+            <form id="tournament-config">
+                <label for="tournament-name">Nome Torneo:</label>
+                <input type="text" id="tournament-name" required>
+
+                <label for="buy-in">Buy-in (€):</label>
+                <input type="number" id="buy-in" required>
+
+                <label for="initial-players">Numero di Giocatori Iniziali:</label>
+                <input type="number" id="initial-players" required>
+
+                <label for="initial-stack">Stack Iniziale:</label>
+                <select id="initial-stack">
+                    <option value="10000">10,000</option>
+                    <option value="15000">15,000</option>
+                    <option value="20000">20,000</option>
+                    <option value="30000">30,000</option>
+                </select>
+
+                <label for="rebuy">Rebuy:</label>
+                <input type="checkbox" id="rebuy">
+                <div id="rebuy-details" class="hidden">
+                    <label for="rebuy-amount">Importo Rebuy (€):</label>
+                    <input type="number" id="rebuy-amount">
+                    <label for="rebuy-chips">Chips Rebuy:</label>
+                    <input type="number" id="rebuy-chips">
+                </div>
+
+                <label for="addon">Add-on:</label>
+                <input type="checkbox" id="addon">
+                <div id="addon-details" class="hidden">
+                    <label for="addon-amount">Importo Add-on (€):</label>
+                    <input type="number" id="addon-amount">
+                    <label for="addon-chips">Chips Add-on:</label>
+                    <input type="number" id="addon-chips">
+                </div>
+
+                <button type="button" id="add-levels">Aggiungi Livelli</button>
+                <button type="submit">Crea Torneo</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
